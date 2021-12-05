@@ -1,4 +1,5 @@
 <!-- 首頁 -->
+<?php include_once "./api/db.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,48 +16,35 @@
 </head>
 
 <body>
-    <div class="container">
-    <div class="jumbotron">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
+
+    <div class="jumbotron p-0" style="overflow:hidden;height:250px">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" style="top:-250px">
                 <div class="carousel-item active">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="./image/dessert-01.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="./image/dessert-02.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="./image/dessert-03.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
         </div>
     </div>
 
 
     <?php //?do=target 自動套用bootstrap & JS
-    $do = (isset($_GET['do'])) ? $_GET['do'] : 'add_subject_form'; //php7.0 有isset 短寫法
-    $file = $do . "php";
+    $do = (isset($_GET['do'])) ? $_GET['do'] : 'show_vote_list'; //php7.0 有isset 短寫法
+    $file = "./frontend/" . $do . "php"; //對前台檔案作用
     if (file_exists($file)) {
         include $file;
     } else {
-        include 'add_subject_form.php';
+        include './frontend/show_vote_list.php';
     }
     ?>
-<div class="p-3 text-center text-light bg-success fixed-bottom">copy right</div>
-</div>
+    <div class="p-3 text-center text-light bg-success fixed-bottom">copy right</div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
