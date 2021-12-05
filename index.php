@@ -1,5 +1,5 @@
 <!-- 首頁 -->
-<?php include_once "./api/db.php";?>
+<?php include_once "./api/db.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +36,7 @@
 
     <?php //?do=target 自動套用bootstrap & JS
     $do = (isset($_GET['do'])) ? $_GET['do'] : 'show_vote_list'; //php7.0 有isset 短寫法
-    $file = "./frontend/" . $do . "php"; //對前台檔案作用
+    $file = "./frontend/" . $do . ".php"; //對前台檔案作用
     if (file_exists($file)) {
         include $file;
     } else {
